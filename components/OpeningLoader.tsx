@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -75,13 +75,13 @@ export default function OpeningLoader({ onComplete, forcePlay = false }: Opening
           {/* Skip Action */}
           <button
             onClick={handleSkip}
-            className="absolute top-6 right-8 text-[10px] uppercase tracking-[0.25em] text-neutral-500 hover:text-[#D4AF37] transition-all py-1.5 px-3 z-20 border border-white/5 rounded-full hover:border-[#D4AF37]/40 bg-black/40 backdrop-blur-sm"
+            className="absolute top-4 right-4 sm:top-6 sm:right-8 text-[10px] uppercase tracking-[0.25em] text-neutral-500 hover:text-[#D4AF37] transition-all py-1.5 px-3 z-20 border border-white/5 rounded-full hover:border-[#D4AF37]/40 bg-black/40 backdrop-blur-sm"
           >
             Überspringen
           </button>
 
           {/* Master Logo Animation Stage */}
-          <div className="relative w-full max-w-[540px] sm:max-w-[620px] px-6 flex flex-col items-center justify-center">
+          <div className="relative w-full max-w-[540px] sm:max-w-[620px] px-4 sm:px-6 flex flex-col items-center justify-center">
             
             {/* Shimmer Light Sweep Overlay at +1.5s */}
             {showShimmer && (

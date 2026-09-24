@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -78,7 +78,7 @@ Bitte teilen Sie mir zeitnah verfügbare Termine mit. Vielen Dank!`;
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
-        className="relative w-full max-w-lg bg-neutral-950 border border-white/15 rounded-2xl shadow-2xl overflow-hidden p-6 sm:p-8"
+        className="relative w-full max-w-lg bg-neutral-950 border border-white/15 rounded-2xl shadow-2xl overflow-y-auto max-h-[92vh] p-5 sm:p-8"
       >
         {/* Close Button */}
         <button

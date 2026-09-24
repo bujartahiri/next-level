@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
@@ -42,8 +42,8 @@ export default function Navbar({ onOpenBooking, onReplayIntro }: NavbarProps) {
         <div className="flex items-center justify-between">
           
           {/* Brand Logo with Silhouette */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-12 sm:w-16 h-7 sm:h-9">
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group">
+            <div className="relative w-10 sm:w-14 h-6 sm:h-8 shrink-0">
               <Image
                 src="/images/loader/car.png"
                 alt="NEXT LEVEL Fahrzeugpflege Emblem"
@@ -52,10 +52,10 @@ export default function Navbar({ onOpenBooking, onReplayIntro }: NavbarProps) {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-sm sm:text-base font-extrabold tracking-[0.2em] font-syne text-white uppercase group-hover:text-[#F3E5AB] transition-colors leading-none">
+              <span className="text-xs sm:text-base font-extrabold tracking-[0.18em] sm:tracking-[0.2em] font-syne text-white uppercase group-hover:text-[#F3E5AB] transition-colors leading-none">
                 NEXT LEVEL
               </span>
-              <span className="text-[9px] sm:text-[10px] tracking-[0.35em] text-[#D4AF37] uppercase font-mono mt-1 font-semibold leading-none">
+              <span className="text-[8px] sm:text-[10px] tracking-[0.3em] text-[#D4AF37] uppercase font-mono mt-1 font-semibold leading-none">
                 FAHRZEUGPFLEGE
               </span>
             </div>

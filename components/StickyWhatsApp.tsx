@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import { MessageCircle, Sparkles, X } from "lucide-react";
@@ -15,7 +15,7 @@ export default function StickyWhatsApp({ onOpenBookingModal }: StickyWhatsAppPro
   );
 
   return (
-    <aside aria-label="WhatsApp Buchung" className="fixed bottom-6 right-6 z-40 flex items-center gap-3">
+    <aside aria-label="WhatsApp Buchung" className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex items-center gap-3">
       {/* Tooltip Badge */}
       {!tooltipDismissed && (
         <div className="hidden sm:flex items-center gap-2 py-2 px-3.5 rounded-full bg-neutral-950/90 border border-[#D4AF37]/40 shadow-[0_4px_25px_rgba(0,0,0,0.8)] backdrop-blur-md animate-in fade-in slide-in-from-right duration-300">
@@ -38,7 +38,7 @@ export default function StickyWhatsApp({ onOpenBookingModal }: StickyWhatsAppPro
         href={`https://wa.me/491761234567?text=${defaultMsg}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="relative group p-4 rounded-full bg-gradient-to-tr from-[#0F0F0F] to-[#1F1F1F] border-2 border-[#D4AF37] text-white shadow-[0_0_25px_rgba(212,175,55,0.4)] hover:shadow-[0_0_35px_rgba(212,175,55,0.7)] hover:scale-105 transition-all duration-300 flex items-center justify-center"
+        className="relative group p-3.5 sm:p-4 rounded-full bg-gradient-to-tr from-[#0F0F0F] to-[#1F1F1F] border-2 border-[#D4AF37] text-white shadow-[0_0_25px_rgba(212,175,55,0.4)] hover:shadow-[0_0_35px_rgba(212,175,55,0.7)] active:scale-95 transition-all duration-300 flex items-center justify-center"
         aria-label="WhatsApp Direktkontakt: +49 176 123 45 67"
       >
         {/* Pulsating Ring */}
