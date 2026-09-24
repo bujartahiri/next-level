@@ -1,26 +1,99 @@
 @import "tailwindcss";
 
+@theme {
+  --color-gold-200: #FAF0D0;
+  --color-gold-300: #F3E5AB;
+  --color-gold-400: #E6CA65;
+  --color-gold-500: #D4AF37;
+  --color-gold-600: #B89020;
+  --color-gold-700: #8E6E16;
+  --color-dark-950: #050505;
+  --color-dark-900: #0a0a0a;
+  --color-dark-850: #111111;
+  --color-dark-800: #171717;
+  --color-dark-700: #222222;
+  --color-dark-600: #333333;
+  --font-syne: var(--font-syne), sans-serif;
+  --font-sans: var(--font-jakarta), sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #050505;
+  --foreground: #ededed;
+  --gold: #D4AF37;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  background-color: #050505;
+  color: #ededed;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #050505;
+  color: #ededed;
+  font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 3px;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* Gold Metallic Text Shimmer */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FDF7E7 0%, #D4AF37 45%, #B89020 80%, #F5DE93 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-bright {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F3E5AB 40%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle Shimmer Sweep Keyframes */
+@keyframes goldShimmer {
+  0% {
+    transform: translateX(-150%) skewX(-25deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(250%) skewX(-25deg);
+    opacity: 0;
+  }
+}
+
+.animate-gold-shimmer {
+  animation: goldShimmer 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Glow effects restricted strictly to champagne gold without cheesy saturated neon */
+.gold-glow-subtle {
+  box-shadow: 0 0 40px -10px rgba(212, 175, 55, 0.18);
+}
+
+.gold-glow-border {
+  border-color: rgba(212, 175, 55, 0.35);
+  box-shadow: 0 0 15px -3px rgba(212, 175, 55, 0.15);
 }
