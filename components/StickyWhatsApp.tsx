@@ -18,17 +18,17 @@ export default function StickyWhatsApp({ onOpenBookingModal }: StickyWhatsAppPro
     <aside aria-label="WhatsApp Buchung" className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex items-center gap-3">
       {/* Tooltip Badge */}
       {!tooltipDismissed && (
-        <div className="hidden sm:flex items-center gap-2 py-2 px-3.5 rounded-full bg-neutral-950/90 border border-[#D4AF37]/40 shadow-[0_4px_25px_rgba(0,0,0,0.8)] backdrop-blur-md animate-in fade-in slide-in-from-right duration-300">
-          <Sparkles className="w-3 h-3 text-[#D4AF37]" />
-          <span className="text-[11px] tracking-wide text-neutral-200 font-medium">
+        <div className="hidden sm:flex items-center gap-2 py-2 px-4 rounded-full bg-neutral-950/90 border border-[#D4AF37]/40 shadow-[0_4px_25px_rgba(0,0,0,0.8)] backdrop-blur-md animate-in fade-in slide-in-from-right duration-300">
+          <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
+          <span className="text-xs text-neutral-200 font-semibold tracking-normal">
             Express-Termin per WhatsApp
           </span>
           <button
             onClick={() => setTooltipDismissed(true)}
-            className="text-neutral-500 hover:text-white ml-1"
+            className="text-neutral-400 hover:text-white ml-1 p-0.5 cursor-pointer"
             title="Schließen"
           >
-            <X className="w-3 h-3" />
+            <X className="w-3.5 h-3.5" />
           </button>
         </div>
       )}

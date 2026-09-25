@@ -92,16 +92,16 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
       
       {/* Section Header */}
       <div className="flex flex-col items-center text-center mb-14 sm:mb-18">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#D4AF37]/35 bg-[#0a0a0a]/90 backdrop-blur-md mb-4">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D4AF37]/35 bg-[#0a0a0a]/90 backdrop-blur-md mb-4 shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
           <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
-          <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#D4AF37] font-semibold">
+          <span className="text-xs sm:text-sm uppercase tracking-wider text-[#D4AF37] font-semibold">
             Unsere Leistungen
           </span>
         </div>
-        <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-3">
+        <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-normal text-white mb-4">
           Handwerk auf <span className="text-gold-gradient">Meisterniveau</span>
         </h2>
-        <p className="max-w-xl text-neutral-300 text-sm sm:text-base leading-relaxed">
+        <p className="max-w-2xl text-neutral-300 text-base sm:text-lg leading-relaxed">
           Exklusive Pflegeprogramme für anspruchsvolle Liebhaber- und Alltagsfahrzeuge.
         </p>
       </div>
@@ -138,38 +138,38 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
                 
                 {/* Number & Icon Overlay */}
                 <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between">
-                  <span className="text-2xl font-bold text-white/90 drop-shadow-md">
+                  <span className="text-2xl font-black text-white/90 drop-shadow-md">
                     {srv.id}
                   </span>
-                  <div className="p-2 rounded-lg bg-black/70 backdrop-blur-md border border-white/15 text-[#D4AF37]">
+                  <div className="p-2.5 rounded-xl bg-black/75 backdrop-blur-md border border-white/15 text-[#D4AF37]">
                     <Icon className="w-4 h-4" />
                   </div>
                 </div>
 
-                {/* Subtitle / Tagline Pill on Image (Replaced Price) */}
+                {/* Subtitle / Tagline Pill on Image */}
                 <div className="absolute bottom-3 left-3.5 right-3.5">
-                  <span className="inline-flex items-center px-3 py-1 rounded-md bg-black/85 backdrop-blur-md border border-[#D4AF37]/35 text-[#D4AF37] text-xs font-semibold tracking-wide">
+                  <span className="inline-flex items-center px-3.5 py-1.5 rounded-lg bg-black/85 backdrop-blur-md border border-[#D4AF37]/35 text-[#D4AF37] text-xs sm:text-sm font-semibold tracking-normal shadow-md">
                     {srv.tagline}
                   </span>
                 </div>
               </div>
 
               {/* Card Body */}
-              <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+              <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-2.5 group-hover:text-[#F3E5AB] transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 tracking-normal group-hover:text-[#F3E5AB] transition-colors">
                     {srv.title}
                   </h3>
 
-                  <p className="text-sm text-neutral-300 leading-relaxed mb-5">
+                  <p className="text-sm sm:text-base text-neutral-300 leading-relaxed mb-6">
                     {srv.description}
                   </p>
 
                   {/* Feature Checkmarks */}
-                  <div className="space-y-2 mb-6 pt-3.5 border-t border-white/10">
+                  <div className="space-y-2.5 mb-7 pt-4 border-t border-white/10">
                     {srv.features.map((feat, fIdx) => (
-                      <div key={fIdx} className="flex items-center gap-2.5 text-xs text-neutral-200">
-                        <Check className="w-3.5 h-3.5 text-[#D4AF37] shrink-0" />
+                      <div key={fIdx} className="flex items-center gap-3 text-sm text-neutral-200 font-medium">
+                        <Check className="w-4 h-4 text-[#D4AF37] shrink-0" />
                         <span>{feat}</span>
                       </div>
                     ))}
@@ -177,17 +177,17 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
                 </div>
 
                 {/* Action CTA */}
-                <div className="pt-3.5 border-t border-white/10">
+                <div className="pt-4 border-t border-white/10">
                   <button
                     onClick={() => onSelectService(srv.title)}
-                    className={`w-full py-3 px-4 rounded-xl text-xs uppercase tracking-wider font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer ${
+                    className={`w-full py-3.5 px-5 rounded-xl text-sm uppercase tracking-wider font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer ${
                       isFeatured
                         ? "bg-[#D4AF37] text-black hover:bg-[#E5C358] shadow-[0_2px_15px_rgba(212,175,55,0.2)]"
                         : "bg-white/[0.04] border border-white/15 text-white hover:border-[#D4AF37]/60 hover:text-[#D4AF37]"
                     }`}
                   >
                     <span>Dieses Paket buchen</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
+                    <ArrowUpRight className="w-4 h-4" />
                   </button>
                 </div>
               </div>

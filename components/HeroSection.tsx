@@ -67,33 +67,33 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full border border-[#D4AF37]/30 bg-black/40 backdrop-blur-md mb-4 sm:mb-6 shadow-[0_2px_12px_rgba(0,0,0,0.5)]"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D4AF37]/35 bg-black/50 backdrop-blur-md mb-4 sm:mb-6 shadow-[0_2px_12px_rgba(0,0,0,0.5)]"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] animate-pulse" />
-          <span className="text-[10px] sm:text-xs uppercase tracking-[0.22em] text-[#D4AF37] font-semibold">
+          <span className="text-xs sm:text-sm uppercase tracking-wider text-[#D4AF37] font-semibold">
             Meisterbetrieb für Fahrzeugveredelung
           </span>
         </motion.div>
 
-        {/* Master Headline: Clean, Confident & Impactful */}
+        {/* Master Headline: Clean, Confident & Impactful with Distinct Word Spacing */}
         <motion.h1
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-3xl sm:text-5xl md:text-6xl lg:text-[4.75rem] font-extrabold tracking-tight text-white leading-[1.1] mb-3 sm:mb-5 drop-shadow-[0_2px_20px_rgba(0,0,0,0.85)]"
+          className="text-3xl sm:text-5xl md:text-6xl lg:text-[4.75rem] font-black tracking-normal text-white leading-[1.15] mb-4 sm:mb-6 drop-shadow-[0_2px_20px_rgba(0,0,0,0.85)]"
         >
           MEHR ALS NUR SAUBER.
-          <span className="block text-gold-gradient font-bold mt-1 sm:mt-2 text-2xl sm:text-4xl md:text-5xl lg:text-[4rem] tracking-tight">
+          <span className="block text-gold-gradient font-bold mt-2 text-2xl sm:text-4xl md:text-5xl lg:text-[3.75rem] tracking-normal leading-[1.2]">
             Die Perfektion des Automobils.
           </span>
         </motion.h1>
 
-        {/* Minimal Value Proposition: Short & Punchy */}
+        {/* Minimal Value Proposition: Readable, Balanced & Open */}
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-xs sm:text-base md:text-lg text-neutral-200/90 font-light leading-relaxed max-w-xl mb-6 sm:mb-8 drop-shadow-[0_1px_10px_rgba(0,0,0,0.9)]"
+          className="text-sm sm:text-lg md:text-xl text-neutral-200 font-normal leading-relaxed max-w-2xl mb-7 sm:mb-9 drop-shadow-[0_1px_10px_rgba(0,0,0,0.9)]"
         >
           <span className="hidden sm:inline">
             Bespoke High-End Fahrzeugaufbereitung, mehrstufige Lackkorrektur und zertifizierte 9H-Keramikversiegelung.
@@ -103,28 +103,28 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
           </span>
         </motion.p>
 
-        {/* Streamlined CTAs: Side-by-Side on Mobile, Compact & Modern */}
+        {/* Streamlined CTAs: Crisp, Bold & Touch-Friendly */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-row items-center justify-center gap-2.5 sm:gap-4 w-full max-w-xs sm:max-w-none"
+          className="flex flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-sm sm:max-w-none"
         >
           <button
             onClick={onOpenBooking}
-            className="flex-1 sm:flex-initial px-5 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#D4AF37] hover:bg-[#E5C358] text-black font-semibold text-xs sm:text-sm tracking-[0.12em] uppercase flex items-center justify-center gap-2 transition-all duration-300 shadow-[0_4px_25px_rgba(212,175,55,0.3)] hover:shadow-[0_6px_35px_rgba(212,175,55,0.45)] active:scale-95 cursor-pointer whitespace-nowrap"
+            className="flex-1 sm:flex-initial px-6 sm:px-9 py-3.5 sm:py-4 rounded-full bg-[#D4AF37] hover:bg-[#E5C358] text-black font-semibold text-sm sm:text-base tracking-wider uppercase flex items-center justify-center gap-2 transition-all duration-300 shadow-[0_4px_25px_rgba(212,175,55,0.3)] hover:shadow-[0_6px_35px_rgba(212,175,55,0.45)] active:scale-95 cursor-pointer whitespace-nowrap"
           >
-            <MessageCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-black shrink-0" />
+            <MessageCircle className="w-4 h-4 fill-black shrink-0" />
             <span>Termin anfragen</span>
           </button>
 
           <a
             href="#gallery"
-            className="flex-1 sm:flex-initial px-4 sm:px-7 py-3.5 sm:py-4 rounded-full bg-black/40 hover:bg-white/10 border border-white/20 hover:border-[#D4AF37]/60 text-white font-medium text-xs sm:text-sm tracking-[0.12em] uppercase flex items-center justify-center gap-1.5 backdrop-blur-md transition-all duration-300 active:scale-95 whitespace-nowrap"
+            className="flex-1 sm:flex-initial px-5 sm:px-8 py-3.5 sm:py-4 rounded-full bg-black/40 hover:bg-white/10 border border-white/20 hover:border-[#D4AF37]/60 text-white font-semibold text-sm sm:text-base tracking-wider uppercase flex items-center justify-center gap-1.5 backdrop-blur-md transition-all duration-300 active:scale-95 whitespace-nowrap"
           >
             <span className="sm:hidden">Ergebnisse</span>
             <span className="hidden sm:inline">Vorher / Nachher</span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#D4AF37] shrink-0" />
+            <ArrowRight className="w-4 h-4 text-[#D4AF37] shrink-0" />
           </a>
         </motion.div>
 

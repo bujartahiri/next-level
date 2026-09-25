@@ -33,20 +33,20 @@ export default function Footer({ onReplayIntro }: FooterProps) {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-base font-bold tracking-[0.22em] text-white uppercase">
+                <span className="text-base sm:text-lg font-extrabold tracking-wider text-white uppercase">
                   NEXT LEVEL
                 </span>
-                <span className="text-[10px] tracking-[0.35em] text-[#D4AF37] uppercase font-semibold">
+                <span className="text-xs font-bold tracking-widest text-[#D4AF37] uppercase mt-1 leading-none">
                   FAHRZEUGPFLEGE
                 </span>
               </div>
             </Link>
 
-            <p className="text-xs text-[#D4AF37] tracking-[0.25em] uppercase font-medium">
+            <p className="text-xs sm:text-sm text-[#D4AF37] tracking-wider uppercase font-semibold">
               SAUBER &bull; GEPFLEGT &bull; WERTBESTÄNDIG
             </p>
 
-            <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed max-w-sm">
+            <p className="text-sm sm:text-base text-neutral-300 leading-relaxed max-w-sm">
               &bdquo;Mehr als nur sauber.&ldquo; Exklusive High-End Fahrzeugaufbereitung, mehrstufige Lackpolitur 
               und zertifizierte 9H Keramikversiegelung.
             </p>
@@ -54,7 +54,7 @@ export default function Footer({ onReplayIntro }: FooterProps) {
             {onReplayIntro && (
               <button
                 onClick={onReplayIntro}
-                className="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-neutral-400 hover:text-[#D4AF37] transition-colors py-1 cursor-pointer"
+                className="inline-flex items-center gap-2 text-xs sm:text-sm uppercase tracking-wider text-neutral-300 hover:text-[#D4AF37] font-medium transition-colors py-1 cursor-pointer"
               >
                 <RotateCcw className="w-3.5 h-3.5 text-[#D4AF37]" />
                 <span>Intro-Animation ansehen</span>
@@ -64,10 +64,10 @@ export default function Footer({ onReplayIntro }: FooterProps) {
 
           {/* Col 2: Core Services */}
           <div>
-            <h4 className="text-xs uppercase tracking-[0.2em] text-white font-semibold mb-4">
+            <h4 className="text-sm uppercase tracking-wider text-white font-bold mb-4">
               Leistungen
             </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-neutral-400">
+            <ul className="space-y-3 text-sm sm:text-base text-neutral-300">
               <li>
                 <a href="#services" className="hover:text-[#D4AF37] transition-colors">
                   9H Keramikversiegelung
@@ -98,10 +98,10 @@ export default function Footer({ onReplayIntro }: FooterProps) {
 
           {/* Col 3: Navigation & Admin */}
           <div>
-            <h4 className="text-xs uppercase tracking-[0.2em] text-white font-semibold mb-4">
+            <h4 className="text-sm uppercase tracking-wider text-white font-bold mb-4">
               Navigation
             </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-neutral-400">
+            <ul className="space-y-3 text-sm sm:text-base text-neutral-300">
               <li>
                 <a href="#gallery" className="hover:text-[#D4AF37] transition-colors">
                   Vorher / Nachher Galerie
@@ -123,8 +123,8 @@ export default function Footer({ onReplayIntro }: FooterProps) {
                 </a>
               </li>
               <li className="pt-2">
-                <Link href="/admin" className="text-[#D4AF37] hover:text-[#F3E5AB] font-medium transition-colors flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] animate-pulse" />
+                <Link href="/admin" className="text-[#D4AF37] hover:text-[#F3E5AB] text-sm sm:text-base font-semibold transition-colors flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
                   <span>Admin CMS Login</span>
                 </Link>
               </li>
@@ -132,19 +132,19 @@ export default function Footer({ onReplayIntro }: FooterProps) {
           </div>
 
           {/* Col 4: Contact & Social */}
-          <div className="space-y-3.5">
-            <h4 className="text-xs uppercase tracking-[0.2em] text-white font-semibold mb-4">
+          <div className="space-y-4">
+            <h4 className="text-sm uppercase tracking-wider text-white font-bold mb-4">
               Direktkontakt
             </h4>
-            <div className="flex items-center gap-2.5 text-xs sm:text-sm text-neutral-300">
-              <Phone className="w-3.5 h-3.5 text-[#D4AF37] shrink-0" />
+            <div className="flex items-center gap-2.5 text-sm sm:text-base text-neutral-200">
+              <Phone className="w-4 h-4 text-[#D4AF37] shrink-0" />
               <a href="tel:+491761234567" className="hover:text-[#D4AF37] transition-colors">
                 +49 176 123 45 67
               </a>
             </div>
 
-            <div className="flex items-center gap-2.5 text-xs sm:text-sm text-neutral-300">
-              <InstagramIcon className="w-3.5 h-3.5 text-[#D4AF37] shrink-0" />
+            <div className="flex items-center gap-2.5 text-sm sm:text-base text-neutral-200">
+              <InstagramIcon className="w-4 h-4 text-[#D4AF37] shrink-0" />
               <a
                 href="https://www.instagram.com/nextlevel_fahrzeugpflege"
                 target="_blank"
@@ -155,8 +155,8 @@ export default function Footer({ onReplayIntro }: FooterProps) {
               </a>
             </div>
 
-            <div className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-400 pt-1">
-              <MapPin className="w-3.5 h-3.5 text-[#D4AF37] shrink-0 mt-0.5" />
+            <div className="flex items-start gap-2.5 text-sm sm:text-base text-neutral-300 pt-1">
+              <MapPin className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
               <span>Musterstraße 12, 12345 Musterstadt</span>
             </div>
           </div>
@@ -164,24 +164,24 @@ export default function Footer({ onReplayIntro }: FooterProps) {
         </div>
 
         {/* Bottom Bar: Copyright & Legal */}
-        <div className="border-t border-white/10 pt-7 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400">
+        <div className="border-t border-white/10 pt-7 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-neutral-300">
           <div>
             &copy; {new Date().getFullYear()} NEXT LEVEL FAHRZEUGPFLEGE. Alle Rechte vorbehalten.
           </div>
 
           <div className="flex items-center gap-6">
-            <Link href="/impressum" className="hover:text-white transition-colors">
+            <Link href="/impressum" className="hover:text-[#D4AF37] transition-colors">
               Impressum
             </Link>
-            <Link href="/datenschutz" className="hover:text-white transition-colors">
+            <Link href="/datenschutz" className="hover:text-[#D4AF37] transition-colors">
               Datenschutz
             </Link>
             <button
               onClick={scrollToTop}
-              className="p-2 rounded-full bg-white/[0.04] border border-white/10 hover:border-[#D4AF37] text-neutral-400 hover:text-white transition-colors cursor-pointer"
+              className="p-2.5 rounded-full bg-white/[0.04] border border-white/10 hover:border-[#D4AF37] text-neutral-300 hover:text-white transition-colors cursor-pointer"
               title="Nach oben scrollen"
             >
-              <ArrowUp className="w-3.5 h-3.5" />
+              <ArrowUp className="w-4 h-4" />
             </button>
           </div>
         </div>

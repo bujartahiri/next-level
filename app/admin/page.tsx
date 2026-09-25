@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
@@ -222,18 +222,18 @@ export default function AdminPage() {
             <div className="w-12 h-12 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 flex items-center justify-center mb-3">
               <Lock className="w-5 h-5 text-[#D4AF37]" />
             </div>
-            <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#D4AF37] mb-1">
+            <span className="text-xs uppercase tracking-wider text-[#D4AF37] font-semibold mb-1">
               Admin CMS Portal
             </span>
-            <h1 className="text-2xl font-bold font-syne text-white">NEXT LEVEL FAHRZEUGPFLEGE</h1>
-            <p className="text-xs text-neutral-400 mt-2">
+            <h1 className="text-2xl sm:text-3xl font-bold tracking-normal text-white">NEXT LEVEL FAHRZEUGPFLEGE</h1>
+            <p className="text-sm text-neutral-300 mt-2">
               Geben Sie das Master-Passwort ein, um Galerie-Projekte zu verwalten.
             </p>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-xs font-mono uppercase text-neutral-400 mb-1">
+              <label className="block text-xs uppercase tracking-wider text-neutral-300 font-semibold mb-1.5">
                 Passwort (Demo: admin123)
               </label>
               <input
@@ -241,28 +241,28 @@ export default function AdminPage() {
                 value={passwordInput}
                 onChange={(e) => setPasswordInput(e.target.value)}
                 placeholder="admin123"
-                className="w-full px-4 py-2.5 rounded-lg bg-neutral-900 border border-white/10 text-white focus:outline-none focus:border-[#D4AF37] text-sm"
+                className="w-full px-4 py-3 rounded-xl bg-neutral-900 border border-white/15 text-white focus:outline-none focus:border-[#D4AF37] text-base"
                 autoFocus
               />
               {authError && (
-                <p className="text-xs text-rose-400 mt-1">Ungültiges Passwort. Verwenden Sie "admin123".</p>
+                <p className="text-xs text-rose-400 mt-1.5">Ungültiges Passwort. Verwenden Sie "admin123".</p>
               )}
             </div>
 
             <button
               type="submit"
-              className="w-full py-2.5 rounded-lg bg-[#D4AF37] hover:bg-[#E6CA65] text-black font-semibold text-xs font-mono uppercase tracking-wider transition-colors"
+              className="w-full py-3.5 rounded-full bg-[#D4AF37] hover:bg-[#E6CA65] text-black font-semibold text-sm uppercase tracking-wider transition-colors cursor-pointer"
             >
               Anmelden
             </button>
           </form>
 
-          <div className="mt-6 pt-4 border-t border-white/5 text-center">
+          <div className="mt-6 pt-4 border-t border-white/10 text-center">
             <Link
               href="/"
-              className="inline-flex items-center gap-1.5 text-xs text-neutral-500 hover:text-neutral-300 font-mono"
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-neutral-400 hover:text-white transition-colors"
             >
-              <ArrowLeft className="w-3.5 h-3.5" />
+              <ArrowLeft className="w-4 h-4" />
               <span>Zurück zur Website</span>
             </Link>
           </div>

@@ -27,6 +27,7 @@ html {
   scroll-behavior: smooth;
   background-color: #050505;
   color: #ededed;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -34,6 +35,16 @@ body {
   color: #ededed;
   font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Typographic Excellence: Ensure tracked text has proportional word spacing */
+.tracking-wider,
+.tracking-widest,
+[class*="tracking-"] {
+  word-spacing: 0.18em;
 }
 
 /* Custom Luxury Scrollbar */

@@ -14,16 +14,16 @@ export default function ContactSection({ onOpenBooking }: ContactSectionProps) {
       
       {/* Header */}
       <div className="flex flex-col items-center text-center mb-14 sm:mb-18">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#D4AF37]/35 bg-[#0a0a0a]/90 backdrop-blur-md mb-4">
-          <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
-          <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#D4AF37] font-semibold">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D4AF37]/35 bg-[#0a0a0a]/90 backdrop-blur-md mb-4">
+          <Sparkles className="w-4 h-4 text-[#D4AF37]" />
+          <span className="text-xs sm:text-sm uppercase tracking-wider text-[#D4AF37] font-semibold">
             Kontakt & Studio
           </span>
         </div>
-        <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-3">
+        <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-normal text-white mb-3">
           Termin <span className="text-gold-gradient">vereinbaren</span>
         </h2>
-        <p className="max-w-xl text-neutral-300 text-sm sm:text-base leading-relaxed">
+        <p className="max-w-xl text-neutral-300 text-base sm:text-lg leading-relaxed">
           Kontaktieren Sie uns direkt für eine unverbindliche Ersteinschätzung Ihres Fahrzeugzustands.
         </p>
       </div>
@@ -36,13 +36,13 @@ export default function ContactSection({ onOpenBooking }: ContactSectionProps) {
             <div className="w-12 h-12 rounded-xl bg-white/[0.03] border border-white/10 text-[#D4AF37] flex items-center justify-center mb-5">
               <Phone className="w-5 h-5" />
             </div>
-            <span className="text-xs uppercase tracking-widest text-[#D4AF37] font-semibold block mb-1">
+            <span className="text-xs sm:text-sm uppercase tracking-wider text-[#D4AF37] font-semibold block mb-1">
               Direktkontakt
             </span>
-            <h3 className="text-xl font-bold text-white mb-2">
+            <h3 className="text-xl sm:text-2xl font-bold tracking-normal text-white mb-2">
               Persönliche Beratung
             </h3>
-            <p className="text-sm text-neutral-300 mb-6 leading-relaxed">
+            <p className="text-sm sm:text-base text-neutral-300 mb-6 leading-relaxed">
               Rufen Sie uns direkt an oder schreiben Sie uns per WhatsApp.
             </p>
           </div>
@@ -50,7 +50,7 @@ export default function ContactSection({ onOpenBooking }: ContactSectionProps) {
           <div className="space-y-3">
             <button
               onClick={onOpenBooking}
-              className="w-full py-3.5 px-5 rounded-full bg-[#D4AF37] hover:bg-[#E5C358] text-black font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-[0_2px_15px_rgba(212,175,55,0.25)] active:scale-95 cursor-pointer"
+              className="w-full py-4 px-5 rounded-full bg-[#D4AF37] hover:bg-[#E5C358] text-black font-semibold text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-[0_2px_15px_rgba(212,175,55,0.25)] active:scale-95 cursor-pointer"
             >
               <MessageCircle className="w-4 h-4 fill-black" />
               <span>WhatsApp Chat starten</span>
@@ -58,7 +58,7 @@ export default function ContactSection({ onOpenBooking }: ContactSectionProps) {
 
             <a
               href="tel:+491761234567"
-              className="w-full py-3 px-5 rounded-full bg-white/[0.04] border border-white/10 hover:border-[#D4AF37]/60 text-white hover:text-[#D4AF37] text-xs uppercase tracking-wider flex items-center justify-between transition-colors"
+              className="w-full py-3.5 px-5 rounded-full bg-white/[0.04] border border-white/10 hover:border-[#D4AF37]/60 text-white hover:text-[#D4AF37] text-sm font-semibold tracking-wider flex items-center justify-between transition-colors"
             >
               <span>+49 176 123 45 67</span>
               <ArrowUpRight className="w-4 h-4" />
@@ -72,16 +72,16 @@ export default function ContactSection({ onOpenBooking }: ContactSectionProps) {
             <div className="w-12 h-12 rounded-xl bg-white/[0.03] border border-white/10 text-[#D4AF37] flex items-center justify-center mb-5">
               <MapPin className="w-5 h-5" />
             </div>
-            <span className="text-xs uppercase tracking-widest text-[#D4AF37] font-semibold block mb-1">
+            <span className="text-xs sm:text-sm uppercase tracking-wider text-[#D4AF37] font-semibold block mb-1">
               Standort
             </span>
-            <h3 className="text-xl font-bold text-white mb-2">
+            <h3 className="text-xl sm:text-2xl font-bold tracking-normal text-white mb-2">
               Detailing Studio
             </h3>
-            <p className="text-base text-white font-medium mb-1">
+            <p className="text-base sm:text-lg text-white font-semibold mb-1">
               Musterstraße 12
             </p>
-            <p className="text-sm text-neutral-300 mb-6">
+            <p className="text-sm sm:text-base text-neutral-300 mb-6">
               12345 Musterstadt, Deutschland
             </p>
           </div>
@@ -91,10 +91,10 @@ export default function ContactSection({ onOpenBooking }: ContactSectionProps) {
               href="https://maps.google.com/?q=Musterstraße+12+12345+Musterstadt"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3 px-5 rounded-full bg-white/[0.04] border border-white/10 hover:border-[#D4AF37]/60 text-white hover:text-[#D4AF37] text-xs uppercase tracking-wider flex items-center justify-between transition-colors"
+              className="w-full py-3.5 px-5 rounded-full bg-white/[0.04] border border-white/10 hover:border-[#D4AF37]/60 text-white hover:text-[#D4AF37] text-sm font-semibold tracking-wider flex items-center justify-between transition-colors"
             >
               <div className="flex items-center gap-2">
-                <Navigation className="w-3.5 h-3.5 text-[#D4AF37]" />
+                <Navigation className="w-4 h-4 text-[#D4AF37]" />
                 <span>Navigation starten</span>
               </div>
               <ArrowUpRight className="w-4 h-4" />
@@ -108,24 +108,24 @@ export default function ContactSection({ onOpenBooking }: ContactSectionProps) {
             <div className="w-12 h-12 rounded-xl bg-white/[0.03] border border-white/10 text-[#D4AF37] flex items-center justify-center mb-5">
               <Clock className="w-5 h-5" />
             </div>
-            <span className="text-xs uppercase tracking-widest text-[#D4AF37] font-semibold block mb-1">
+            <span className="text-xs sm:text-sm uppercase tracking-wider text-[#D4AF37] font-semibold block mb-1">
               Verfügbarkeit
             </span>
-            <h3 className="text-xl font-bold text-white mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold tracking-normal text-white mb-4">
               Öffnungszeiten
             </h3>
 
-            <div className="space-y-2.5 text-xs sm:text-sm text-neutral-200 mb-6">
+            <div className="space-y-3 text-sm sm:text-base text-neutral-200 mb-6">
               <div className="flex justify-between pb-2 border-b border-white/5">
-                <span className="text-neutral-400">Mo – Fr:</span>
+                <span className="text-neutral-400 font-medium">Mo – Fr:</span>
                 <span className="text-white font-semibold">08:00 – 18:00 Uhr</span>
               </div>
               <div className="flex justify-between pb-2 border-b border-white/5">
-                <span className="text-neutral-400">Samstag:</span>
+                <span className="text-neutral-400 font-medium">Samstag:</span>
                 <span className="text-white font-semibold">09:00 – 15:00 Uhr</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-neutral-400">Sonntag:</span>
+                <span className="text-neutral-400 font-medium">Sonntag:</span>
                 <span className="text-[#D4AF37] font-semibold">Nach Absprache</span>
               </div>
             </div>
@@ -136,7 +136,7 @@ export default function ContactSection({ onOpenBooking }: ContactSectionProps) {
               href="https://www.instagram.com/nextlevel_fahrzeugpflege"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3 px-5 rounded-full bg-white/[0.04] border border-white/10 hover:border-[#D4AF37]/60 text-white hover:text-[#D4AF37] text-xs uppercase tracking-wider flex items-center justify-between transition-colors"
+              className="w-full py-3.5 px-5 rounded-full bg-white/[0.04] border border-white/10 hover:border-[#D4AF37]/60 text-white hover:text-[#D4AF37] text-sm font-semibold tracking-wider flex items-center justify-between transition-colors"
             >
               <div className="flex items-center gap-2">
                 <InstagramIcon className="w-4 h-4 text-[#D4AF37]" />

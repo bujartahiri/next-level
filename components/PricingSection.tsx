@@ -65,16 +65,16 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
       
       {/* Header */}
       <div className="flex flex-col items-center text-center mb-14 sm:mb-18">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#D4AF37]/35 bg-[#0a0a0a]/90 backdrop-blur-md mb-4">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D4AF37]/35 bg-[#0a0a0a]/90 backdrop-blur-md mb-4 shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
           <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
-          <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#D4AF37] font-semibold">
+          <span className="text-xs sm:text-sm uppercase tracking-wider text-[#D4AF37] font-semibold">
             Transparente Festpreise
           </span>
         </div>
-        <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-3">
+        <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-normal text-white mb-4">
           Investition in den <span className="text-gold-gradient">Werterhalt</span>
         </h2>
-        <p className="max-w-xl text-neutral-300 text-sm sm:text-base leading-relaxed">
+        <p className="max-w-2xl text-neutral-300 text-base sm:text-lg leading-relaxed">
           Feste Paketpreise ohne versteckte Kosten. Individuelle Einstufung nach Fahrzeuggröße und Lackzustand.
         </p>
       </div>
@@ -98,38 +98,38 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className={`text-[11px] uppercase tracking-wider px-3 py-1 rounded-full font-semibold ${
+                  <span className={`text-xs uppercase tracking-wider px-3.5 py-1 rounded-full font-semibold ${
                     isFeatured
                       ? "bg-[#D4AF37] text-black shadow-sm"
                       : "bg-white/10 text-[#D4AF37] border border-white/10"
                   }`}>
                     {pkg.badge}
                   </span>
-                  <span className="text-xs text-neutral-400">
+                  <span className="text-xs sm:text-sm text-neutral-400 font-medium">
                     {pkg.duration}
                   </span>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight mb-1">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-normal mb-1.5">
                   {pkg.name}
                 </h3>
-                <p className="text-xs text-[#D4AF37] font-medium tracking-wide mb-5">{pkg.tagline}</p>
+                <p className="text-sm text-[#D4AF37] font-medium tracking-normal mb-5">{pkg.tagline}</p>
 
-                <div className="text-3xl sm:text-4xl font-extrabold text-white mb-5 pb-5 border-b border-white/10">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 pb-5 border-b border-white/10">
                   {pkg.price}
-                  <span className="text-xs font-normal text-neutral-400 ml-2">
+                  <span className="text-xs sm:text-sm font-normal text-neutral-400 ml-2">
                     inkl. MwSt.
                   </span>
                 </div>
 
-                <p className="text-sm text-neutral-300 leading-relaxed mb-6">
+                <p className="text-sm sm:text-base text-neutral-300 leading-relaxed mb-6">
                   {pkg.description}
                 </p>
 
                 {/* Features List */}
-                <div className="space-y-2.5 mb-7">
+                <div className="space-y-3 mb-8">
                   {pkg.features.map((feat, fIdx) => (
-                    <div key={fIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-200">
+                    <div key={fIdx} className="flex items-start gap-3 text-sm sm:text-[15px] text-neutral-200 font-medium">
                       <Check className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </div>
@@ -140,7 +140,7 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
               <div>
                 <button
                   onClick={() => onSelectPackage(pkg.name)}
-                  className={`w-full py-3.5 px-5 rounded-full text-xs uppercase tracking-wider flex items-center justify-center gap-2 font-semibold transition-all cursor-pointer ${
+                  className={`w-full py-4 px-6 rounded-full text-sm uppercase tracking-wider flex items-center justify-center gap-2 font-semibold transition-all cursor-pointer ${
                     isFeatured
                       ? "bg-[#D4AF37] text-black hover:bg-[#E5C358] shadow-[0_2px_15px_rgba(212,175,55,0.25)]"
                       : "bg-white/[0.04] border border-white/15 text-white hover:border-[#D4AF37]/60 hover:text-[#D4AF37]"

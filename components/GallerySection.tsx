@@ -42,16 +42,16 @@ export default function GallerySection({ onSelectBooking }: GallerySectionProps)
       
       {/* Editorial Section Header */}
       <div className="flex flex-col items-center text-center mb-12 sm:mb-16">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#D4AF37]/35 bg-[#0a0a0a]/90 backdrop-blur-md mb-4">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D4AF37]/35 bg-[#0a0a0a]/90 backdrop-blur-md mb-4 shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
           <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
-          <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#D4AF37] font-semibold">
+          <span className="text-xs sm:text-sm uppercase tracking-wider text-[#D4AF37] font-semibold">
             Interaktiver Lackvergleich
           </span>
         </div>
-        <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-3">
+        <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-normal text-white mb-4">
           Transformation in <span className="text-gold-gradient">Meisterqualität</span>
         </h2>
-        <p className="max-w-xl text-neutral-300 text-sm sm:text-base leading-relaxed">
+        <p className="max-w-2xl text-neutral-300 text-base sm:text-lg leading-relaxed">
           Ziehen Sie den Schieberegler, um die Beseitigung von Mikrokratzern und den erreichten Tiefenglanz im Detail zu prüfen.
         </p>
       </div>
@@ -69,10 +69,10 @@ export default function GallerySection({ onSelectBooking }: GallerySectionProps)
                 <button
                   key={p.id}
                   onClick={() => setActiveIndex(idx)}
-                  className={`px-4 py-2.5 rounded-full text-xs tracking-wider font-semibold whitespace-nowrap transition-all duration-200 border cursor-pointer ${
+                  className={`px-5 py-2.5 rounded-full text-xs sm:text-sm tracking-wider font-semibold whitespace-nowrap transition-all duration-200 border cursor-pointer ${
                     isActive
                       ? "bg-[#D4AF37] text-black border-[#D4AF37] shadow-[0_2px_15px_rgba(212,175,55,0.25)]"
-                      : "bg-[#0a0a0a] text-neutral-300 border-white/10 hover:border-[#D4AF37]/50 hover:text-white"
+                      : "bg-[#0a0a0a] text-neutral-200 border-white/10 hover:border-[#D4AF37]/50 hover:text-white"
                   }`}
                 >
                   {p.carModel}
@@ -82,7 +82,7 @@ export default function GallerySection({ onSelectBooking }: GallerySectionProps)
           </div>
 
           {/* Flagship Large Format Before/After Stage */}
-          <div className="relative rounded-2xl bg-[#0a0a0a] p-3 sm:p-5 border border-white/10 shadow-[0_4px_40px_rgba(0,0,0,0.8)]">
+          <div className="relative rounded-2xl bg-[#0a0a0a] p-4 sm:p-6 border border-white/10 shadow-[0_4px_40px_rgba(0,0,0,0.8)]">
             <BeforeAfterSlider
               key={activeProject.id}
               beforeImage={activeProject.beforeImage}
@@ -90,26 +90,26 @@ export default function GallerySection({ onSelectBooking }: GallerySectionProps)
               carModel={activeProject.carModel}
               serviceCategory={activeProject.serviceCategory}
               beforeLabel="VORHER &bull; SWIRLS & KRATZER"
-              afterLabel="NACHHER &bull; 9H KERAMIK SPIEGELGLANZ"
+              afterLabel="NACHHER &bull; 9H KERAMIK"
               aspectRatio="aspect-[16/10] sm:aspect-[16/9]"
               onExpand={() => setSelectedProject(activeProject)}
             />
 
             {/* Active Project Meta & Action Bar */}
-            <div className="pt-5 flex flex-col md:flex-row md:items-center justify-between gap-5 border-t border-white/10 mt-5">
+            <div className="pt-6 flex flex-col md:flex-row md:items-center justify-between gap-5 border-t border-white/10 mt-6">
               <div>
-                <span className="text-xs uppercase tracking-widest text-[#D4AF37] font-semibold block mb-1">
+                <span className="text-xs sm:text-sm uppercase tracking-wider text-[#D4AF37] font-semibold block mb-1">
                   {activeProject.serviceCategory}
                 </span>
-                <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-normal">
                   {activeProject.carModel}
                 </h3>
-                <p className="text-sm text-neutral-300 mt-1.5 max-w-2xl leading-relaxed">
+                <p className="text-sm sm:text-base text-neutral-300 mt-2 max-w-2xl leading-relaxed">
                   {activeProject.description}
                 </p>
                 {activeProject.protection && (
-                  <div className="flex items-center gap-2 mt-2.5 text-xs text-neutral-300">
-                    <ShieldCheck className="w-3.5 h-3.5 text-[#D4AF37]" />
+                  <div className="flex items-center gap-2 mt-3 text-sm text-neutral-200">
+                    <ShieldCheck className="w-4 h-4 text-[#D4AF37]" />
                     <span className="font-medium">{activeProject.protection}</span>
                   </div>
                 )}
@@ -125,7 +125,7 @@ export default function GallerySection({ onSelectBooking }: GallerySectionProps)
                       window.open(`https://wa.me/491761234567?text=${msg}`, "_blank");
                     }
                   }}
-                  className="px-6 py-3.5 rounded-full bg-[#D4AF37] hover:bg-[#E5C358] text-black font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-[0_2px_15px_rgba(212,175,55,0.2)] transition-all active:scale-95 cursor-pointer"
+                  className="px-6 py-3.5 rounded-full bg-[#D4AF37] hover:bg-[#E5C358] text-black font-semibold text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-[0_2px_15px_rgba(212,175,55,0.2)] transition-all active:scale-95 cursor-pointer"
                 >
                   <span>Dieses Paket anfragen</span>
                   <ArrowUpRight className="w-4 h-4" />

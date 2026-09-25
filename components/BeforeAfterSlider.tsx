@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import Image from "next/image";
@@ -124,13 +124,13 @@ export default function BeforeAfterSlider({
 
       {/* 4. Luxury Badges (Clear, Large, High Contrast) */}
       <div className="absolute top-4 left-4 z-10 pointer-events-none">
-        <span className="px-3.5 py-1.5 text-xs sm:text-sm font-mono tracking-widest font-bold uppercase rounded-lg bg-black/80 backdrop-blur-md border border-white/20 text-white shadow-lg">
+        <span className="px-3.5 py-1.5 text-xs sm:text-sm tracking-wider font-bold uppercase rounded-lg bg-black/85 backdrop-blur-md border border-white/20 text-white shadow-lg">
           {beforeLabel}
         </span>
       </div>
 
       <div className="absolute top-4 right-4 z-10 flex items-center gap-2">
-        <span className="px-3.5 py-1.5 text-xs sm:text-sm font-mono tracking-widest font-bold uppercase rounded-lg bg-[#D4AF37]/20 backdrop-blur-md border border-[#D4AF37] text-[#D4AF37] flex items-center gap-1.5 shadow-[0_0_15px_rgba(212,175,55,0.3)]">
+        <span className="px-3.5 py-1.5 text-xs sm:text-sm tracking-wider font-bold uppercase rounded-lg bg-[#D4AF37]/20 backdrop-blur-md border border-[#D4AF37] text-[#D4AF37] flex items-center gap-1.5 shadow-[0_0_15px_rgba(212,175,55,0.3)]">
           <Sparkles className="w-3.5 h-3.5" />
           {afterLabel}
         </span>
@@ -154,17 +154,17 @@ export default function BeforeAfterSlider({
         <div className="absolute bottom-4 left-4 right-4 z-10 flex items-end justify-between pointer-events-none">
           <div>
             {serviceCategory && (
-              <span className="text-xs uppercase font-mono tracking-widest text-[#D4AF37] font-semibold block mb-0.5">
+              <span className="text-xs uppercase tracking-wider text-[#D4AF37] font-semibold block mb-0.5">
                 {serviceCategory}
               </span>
             )}
             {carModel && (
-              <h4 className="text-base sm:text-lg font-bold font-syne tracking-wide text-white drop-shadow-lg">
+              <h4 className="text-base sm:text-lg font-bold tracking-normal text-white drop-shadow-lg">
                 {carModel}
               </h4>
             )}
           </div>
-          <div className="text-xs font-mono font-bold text-white bg-black/75 px-2.5 py-1 rounded-md border border-white/10 backdrop-blur-md">
+          <div className="text-xs sm:text-sm font-semibold text-white bg-black/85 px-3 py-1 rounded-md border border-white/10 backdrop-blur-md">
             {Math.round(sliderPosition)}%
           </div>
         </div>

@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
@@ -13,20 +13,20 @@ export default function DatenschutzPage() {
       <div className="max-w-3xl mx-auto">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-xs font-mono uppercase text-[#D4AF37] hover:underline mb-8"
+          className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-[#D4AF37] hover:text-[#E5C358] transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Zurück zur Startseite</span>
         </Link>
 
-        <h1 className="text-3xl sm:text-4xl font-bold font-syne text-white mb-2">Datenschutzerklärung</h1>
-        <p className="text-xs font-mono text-[#D4AF37] uppercase tracking-wider mb-8">
+        <h1 className="text-3xl sm:text-5xl font-black tracking-normal text-white mb-2">Datenschutzerklärung</h1>
+        <p className="text-xs sm:text-sm text-[#D4AF37] uppercase tracking-wider font-semibold mb-8">
           Informationen nach Art. 13 DSGVO
         </p>
 
-        <div className="space-y-6 text-sm text-neutral-300 leading-relaxed bg-neutral-950 p-8 rounded-2xl border border-white/10">
+        <div className="space-y-6 text-base text-neutral-300 leading-relaxed bg-[#0a0a0a] p-8 sm:p-10 rounded-2xl border border-white/10">
           <div>
-            <h2 className="text-base font-bold text-white mb-2">1. Datenschutz auf einen Blick</h2>
+            <h2 className="text-lg sm:text-xl font-bold tracking-normal text-white mb-2">1. Datenschutz auf einen Blick</h2>
             <p>
               Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten daher 
               ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG).
@@ -34,7 +34,7 @@ export default function DatenschutzPage() {
           </div>
 
           <div>
-            <h2 className="text-base font-bold text-white mb-2">2. Verantwortliche Stelle</h2>
+            <h2 className="text-lg sm:text-xl font-bold tracking-normal text-white mb-2">2. Verantwortliche Stelle</h2>
             <p>
               NEXT LEVEL FAHRZEUGPFLEGE<br />
               Musterstraße 12, 12345 Musterstadt<br />
@@ -44,7 +44,7 @@ export default function DatenschutzPage() {
           </div>
 
           <div>
-            <h2 className="text-base font-bold text-white mb-2">3. Datenerfassung & Terminanfragen</h2>
+            <h2 className="text-lg sm:text-xl font-bold tracking-normal text-white mb-2">3. Datenerfassung & Terminanfragen</h2>
             <p>
               Wenn Sie per Formular oder WhatsApp Kontakt mit uns aufnehmen, werden Ihre angegebenen Daten 
               (Name, Telefonnummer, Fahrzeugmodell, Wunschleistung) zwecks Bearbeitung der Anfrage und für 
@@ -53,8 +53,8 @@ export default function DatenschutzPage() {
           </div>
 
           <div>
-            <h2 className="text-base font-bold text-white mb-2">4. Ihre Rechte</h2>
-            <p className="text-xs text-neutral-400">
+            <h2 className="text-lg sm:text-xl font-bold tracking-normal text-white mb-2">4. Ihre Rechte</h2>
+            <p className="text-sm text-neutral-300 leading-relaxed">
               Ihnen stehen grundsätzlich die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, 
               Datenübertragbarkeit, Widerruf und Widerspruch zu. Wenn Sie glauben, dass die Verarbeitung Ihrer 
               Daten gegen das Datenschutzrecht verstößt, können Sie sich an die Aufsichtsbehörde wenden.

@@ -68,7 +68,7 @@ export default function OpeningLoader({ onComplete }: OpeningLoaderProps) {
         type="button"
         onClick={handleSkip}
         onTouchEnd={handleSkip}
-        className="absolute top-4 right-4 sm:top-6 sm:right-8 text-[10px] uppercase tracking-[0.25em] text-neutral-400 hover:text-[#D4AF37] transition-all py-1.5 px-3.5 z-30 border border-white/10 rounded-full hover:border-[#D4AF37]/50 bg-black/60 backdrop-blur-md active:scale-95"
+        className="absolute top-4 right-4 sm:top-6 sm:right-8 text-xs uppercase tracking-wider text-neutral-300 hover:text-[#D4AF37] font-semibold transition-all py-2 px-4 z-30 border border-white/15 rounded-full hover:border-[#D4AF37]/50 bg-black/70 backdrop-blur-md active:scale-95 cursor-pointer"
       >
         Überspringen
       </button>
@@ -171,7 +171,7 @@ export default function OpeningLoader({ onComplete }: OpeningLoaderProps) {
                 animation: "fadeIn 0.3s ease-out forwards",
               }}
             >
-              <span className="text-[9px] sm:text-[10px] tracking-[0.45em] text-[#D4AF37]/85 uppercase font-mono font-medium pl-1">
+              <span className="text-xs tracking-widest text-[#D4AF37] uppercase font-semibold">
                 LOADING...
               </span>
               <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent animate-pulse" />

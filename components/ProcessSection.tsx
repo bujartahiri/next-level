@@ -37,16 +37,16 @@ export default function ProcessSection() {
       
       {/* Header */}
       <div className="flex flex-col items-center text-center mb-14 sm:mb-18">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#D4AF37]/35 bg-[#0a0a0a]/90 backdrop-blur-md mb-4">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D4AF37]/35 bg-[#0a0a0a]/90 backdrop-blur-md mb-4 shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
           <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
-          <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#D4AF37] font-semibold">
+          <span className="text-xs sm:text-sm uppercase tracking-wider text-[#D4AF37] font-semibold">
             Zertifizierter Ablauf
           </span>
         </div>
-        <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-3">
+        <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-normal text-white mb-4">
           Präzision in <span className="text-gold-gradient">vier Phasen</span>
         </h2>
-        <p className="max-w-xl text-neutral-300 text-sm sm:text-base leading-relaxed">
+        <p className="max-w-2xl text-neutral-300 text-base sm:text-lg leading-relaxed">
           Systematisches Vorgehen für maximale Lackschonung und dauerhaften Werterhalt.
         </p>
       </div>
@@ -66,7 +66,7 @@ export default function ProcessSection() {
             >
               <div>
                 <div className="flex items-center justify-between mb-5">
-                  <span className="text-3xl sm:text-4xl font-bold text-[#D4AF37]/40 group-hover:text-[#D4AF37] transition-colors">
+                  <span className="text-3xl sm:text-4xl font-black text-[#D4AF37]/40 group-hover:text-[#D4AF37] transition-colors">
                     {s.step}
                   </span>
                   <div className="p-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-[#D4AF37]">
@@ -74,17 +74,17 @@ export default function ProcessSection() {
                   </div>
                 </div>
 
-                <h3 className="text-base sm:text-lg font-bold text-white tracking-tight mb-2">
+                <h3 className="text-lg sm:text-xl font-bold text-white tracking-normal mb-2.5">
                   {s.title}
                 </h3>
 
-                <p className="text-sm text-neutral-300 leading-relaxed">
+                <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
                   {s.desc}
                 </p>
               </div>
 
-              <div className="mt-6 pt-3.5 border-t border-white/10 flex items-center gap-2 text-xs text-[#D4AF37] font-medium tracking-wide">
-                <CheckCircle2 className="w-3.5 h-3.5" />
+              <div className="mt-6 pt-3.5 border-t border-white/10 flex items-center gap-2 text-xs sm:text-sm text-[#D4AF37] font-semibold tracking-normal">
+                <CheckCircle2 className="w-4 h-4" />
                 <span>Meisterstandard</span>
               </div>
             </motion.div>

@@ -54,10 +54,10 @@ export default function Navbar({ onOpenBooking, onReplayIntro }: NavbarProps) {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-sm sm:text-base font-bold tracking-[0.22em] text-white uppercase group-hover:text-[#F3E5AB] transition-colors leading-none">
+              <span className="text-base sm:text-lg font-extrabold tracking-wider text-white uppercase group-hover:text-[#F3E5AB] transition-colors leading-none">
                 NEXT LEVEL
               </span>
-              <span className="text-[9px] sm:text-[10px] tracking-[0.35em] text-[#D4AF37] uppercase font-semibold mt-1 leading-none">
+              <span className="text-xs font-bold tracking-widest text-[#D4AF37] uppercase mt-1 leading-none">
                 FAHRZEUGPFLEGE
               </span>
             </div>
@@ -69,7 +69,7 @@ export default function Navbar({ onOpenBooking, onReplayIntro }: NavbarProps) {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-xs uppercase tracking-[0.2em] font-medium text-neutral-300 hover:text-[#D4AF37] transition-colors relative py-1 group"
+                className="text-sm uppercase tracking-wider font-semibold text-neutral-300 hover:text-[#D4AF37] transition-colors relative py-1 group"
               >
                 {link.name}
                 <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#D4AF37] transition-all duration-300 group-hover:w-full" />
@@ -81,7 +81,7 @@ export default function Navbar({ onOpenBooking, onReplayIntro }: NavbarProps) {
           <div className="hidden sm:flex items-center gap-3">
             <a
               href="tel:+491761234567"
-              className="px-4 py-2.5 rounded-full border border-white/15 hover:border-[#D4AF37]/50 text-neutral-300 hover:text-white text-xs tracking-wider font-medium flex items-center gap-2 transition-all bg-white/[0.02] hover:bg-white/[0.05]"
+              className="px-4 py-2.5 rounded-full border border-white/15 hover:border-[#D4AF37]/50 text-neutral-200 hover:text-white text-sm font-medium flex items-center gap-2 transition-all bg-white/[0.02] hover:bg-white/[0.05]"
             >
               <Phone className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span>0176 123 45 67</span>
@@ -89,7 +89,7 @@ export default function Navbar({ onOpenBooking, onReplayIntro }: NavbarProps) {
 
             <button
               onClick={onOpenBooking}
-              className="px-5 py-2.5 rounded-full bg-[#D4AF37] hover:bg-[#E5C358] text-black font-semibold text-xs tracking-wider uppercase flex items-center gap-2 transition-all duration-200 shadow-[0_2px_15px_rgba(212,175,55,0.2)] active:scale-95 cursor-pointer"
+              className="px-5 py-2.5 rounded-full bg-[#D4AF37] hover:bg-[#E5C358] text-black font-semibold text-sm tracking-wider uppercase flex items-center gap-2 transition-all duration-200 shadow-[0_2px_15px_rgba(212,175,55,0.2)] active:scale-95 cursor-pointer"
             >
               <MessageCircle className="w-3.5 h-3.5 fill-black" />
               <span>Termin buchen</span>
@@ -127,7 +127,7 @@ export default function Navbar({ onOpenBooking, onReplayIntro }: NavbarProps) {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-sm uppercase tracking-[0.2em] font-medium text-neutral-200 hover:text-[#D4AF37] py-2.5 border-b border-white/5"
+                className="text-base uppercase tracking-wider font-semibold text-neutral-200 hover:text-[#D4AF37] py-2.5 border-b border-white/5"
               >
                 {link.name}
               </a>
@@ -135,7 +135,7 @@ export default function Navbar({ onOpenBooking, onReplayIntro }: NavbarProps) {
             <Link
               href="/admin"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-xs uppercase tracking-[0.2em] text-[#D4AF37] py-2"
+              className="text-sm uppercase tracking-wider text-[#D4AF37] py-2 font-medium"
             >
               Admin CMS Login
             </Link>
@@ -144,7 +144,7 @@ export default function Navbar({ onOpenBooking, onReplayIntro }: NavbarProps) {
           <div className="pt-2 flex flex-col gap-3">
             <a
               href="tel:+491761234567"
-              className="w-full py-3.5 rounded-full border border-white/15 text-white text-center text-xs tracking-wider font-medium flex items-center justify-center gap-2 bg-neutral-900"
+              className="w-full py-3.5 rounded-full border border-white/15 text-white text-center text-sm font-medium flex items-center justify-center gap-2 bg-neutral-900"
             >
               <Phone className="w-4 h-4 text-[#D4AF37]" />
               <span>+49 176 123 45 67 anrufen</span>
@@ -155,7 +155,7 @@ export default function Navbar({ onOpenBooking, onReplayIntro }: NavbarProps) {
                 setMobileMenuOpen(false);
                 onOpenBooking();
               }}
-              className="w-full py-3.5 rounded-full bg-[#D4AF37] text-black font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow-[0_2px_15px_rgba(212,175,55,0.25)] cursor-pointer"
+              className="w-full py-3.5 rounded-full bg-[#D4AF37] text-black font-semibold text-sm tracking-wider uppercase flex items-center justify-center gap-2 shadow-[0_2px_15px_rgba(212,175,55,0.25)] cursor-pointer"
             >
               <MessageCircle className="w-4 h-4 fill-black" />
               <span>Direkt per WhatsApp anfragen</span>
