@@ -29,7 +29,6 @@ const SERVICES = [
       "Säurefreie Felgenreinigung",
       "Flugrost- & Teerentfernung",
     ],
-    price: "Ab 129 €",
     icon: Droplets,
   },
   {
@@ -43,7 +42,6 @@ const SERVICES = [
       "Porentiefe Leder- & Alcantara-Pflege",
       "Ozon-Geruchsneutralisierung",
     ],
-    price: "Ab 219 €",
     icon: Sparkles,
   },
   {
@@ -57,7 +55,6 @@ const SERVICES = [
       "Mehrstufige Kratzerkorrektur",
       "Hologrammfreies Hochglanz-Finish",
     ],
-    price: "Ab 449 €",
     icon: Layers,
   },
   {
@@ -71,7 +68,6 @@ const SERVICES = [
       "Extremer Selbstreinigungseffekt",
       "Bis zu 36 Monate Schutzgarantie",
     ],
-    price: "Ab 849 €",
     icon: Shield,
     featured: true,
   },
@@ -86,7 +82,6 @@ const SERVICES = [
       "Smart-Repair & Dellenbeseitigung",
       "Verkaufsfertiges Showroom-Finish",
     ],
-    price: "Auf Anfrage",
     icon: CarFront,
   },
 ];
@@ -100,7 +95,7 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#D4AF37]/35 bg-[#0a0a0a]/90 backdrop-blur-md mb-4">
           <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
           <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#D4AF37] font-semibold">
-            Dienstleistungen
+            Unsere Leistungen
           </span>
         </div>
         <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-3">
@@ -151,10 +146,10 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
                   </div>
                 </div>
 
-                {/* Price Tag in Image */}
-                <div className="absolute bottom-3 left-4">
-                  <span className="px-3 py-1 rounded-md bg-black/85 backdrop-blur-md border border-white/20 text-white text-xs sm:text-sm font-semibold tracking-wide">
-                    {srv.price}
+                {/* Subtitle / Tagline Pill on Image (Replaced Price) */}
+                <div className="absolute bottom-3 left-3.5 right-3.5">
+                  <span className="inline-flex items-center px-3 py-1 rounded-md bg-black/85 backdrop-blur-md border border-[#D4AF37]/35 text-[#D4AF37] text-xs font-semibold tracking-wide">
+                    {srv.tagline}
                   </span>
                 </div>
               </div>
@@ -162,12 +157,9 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
               {/* Card Body */}
               <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-1 group-hover:text-[#F3E5AB] transition-colors">
+                  <h3 className="text-xl font-bold text-white mb-2.5 group-hover:text-[#F3E5AB] transition-colors">
                     {srv.title}
                   </h3>
-                  <p className="text-xs text-[#D4AF37] font-medium tracking-wide mb-3">
-                    {srv.tagline}
-                  </p>
 
                   <p className="text-sm text-neutral-300 leading-relaxed mb-5">
                     {srv.description}
