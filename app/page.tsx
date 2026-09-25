@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import OpeningLoader from "@/components/OpeningLoader";
@@ -16,7 +16,6 @@ import { GalleryProject } from "@/types/gallery";
 
 export default function HomePage() {
   const [loaderKey, setLoaderKey] = useState(0);
-  const [forcePlayLoader, setForcePlayLoader] = useState(false);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedService, setSelectedService] = useState("Keramikversiegelung (9H Langzeitschutz)");
   const [selectedCar, setSelectedCar] = useState("");
@@ -28,8 +27,6 @@ export default function HomePage() {
   };
 
   const handleReplayIntro = () => {
-    sessionStorage.removeItem("nextlevel_intro_seen");
-    setForcePlayLoader(true);
     setLoaderKey((prev) => prev + 1);
   };
 
@@ -42,8 +39,6 @@ export default function HomePage() {
       {/* 1. Strict Storyboard Opening Loader */}
       <OpeningLoader
         key={loaderKey}
-        forcePlay={forcePlayLoader}
-        onComplete={() => setForcePlayLoader(false)}
       />
 
       {/* 2. Fixed Luxury Navigation Bar */}

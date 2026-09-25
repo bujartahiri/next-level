@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
@@ -8,38 +8,28 @@ interface OpeningLoaderProps {
   forcePlay?: boolean;
 }
 
-export default function OpeningLoader({ onComplete, forcePlay = false }: OpeningLoaderProps) {
+export default function OpeningLoader({ onComplete }: OpeningLoaderProps) {
   const [isVisible, setIsVisible] = useState(true);
   const [showShimmer, setShowShimmer] = useState(false);
   const [showLoadingText, setShowLoadingText] = useState(false);
 
   useEffect(() => {
-    // 1. Safe storage check (prevents iOS Safari Private Mode SecurityError crash)
+    // Clean up any legacy storage flag so it never interferes
     try {
-      const hasSeen = sessionStorage.getItem("nextlevel_intro_seen");
-      if (hasSeen && !forcePlay) {
-        setIsVisible(false);
-        if (onComplete) onComplete();
-        return;
-      }
-    } catch (e) {
-      // Ignore private mode storage restrictions
-    }
+      sessionStorage.removeItem("nextlevel_intro_seen");
+    } catch (e) {}
 
-    // 2. Storyboard timeline
+    // Storyboard timeline:
     // +1.5s: Shimmer sweep & micro "LOADING..." label
     const shimmerTimer = setTimeout(() => {
       setShowShimmer(true);
       setShowLoadingText(true);
     }, 1500);
 
-    // +2.4s: Clean fade out to reveal Hero
+    // +2.5s: Clean fade out to reveal Hero
     const exitTimer = setTimeout(() => {
       setIsVisible(false);
-      try {
-        sessionStorage.setItem("nextlevel_intro_seen", "true");
-      } catch (e) {}
-    }, 2400);
+    }, 2500);
 
     // +2.9s: Notify parent that hero is fully active
     const completeTimer = setTimeout(() => {
@@ -51,13 +41,10 @@ export default function OpeningLoader({ onComplete, forcePlay = false }: Opening
       clearTimeout(exitTimer);
       clearTimeout(completeTimer);
     };
-  }, [forcePlay, onComplete]);
+  }, [onComplete]);
 
   const handleSkip = () => {
     setIsVisible(false);
-    try {
-      sessionStorage.setItem("nextlevel_intro_seen", "true");
-    } catch (e) {}
     if (onComplete) onComplete();
   };
 
