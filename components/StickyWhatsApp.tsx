@@ -20,7 +20,7 @@ export default function StickyWhatsApp({ onOpenBookingModal }: StickyWhatsAppPro
       {!tooltipDismissed && (
         <div className="hidden sm:flex items-center gap-2 py-2 px-3.5 rounded-full bg-neutral-950/90 border border-[#D4AF37]/40 shadow-[0_4px_25px_rgba(0,0,0,0.8)] backdrop-blur-md animate-in fade-in slide-in-from-right duration-300">
           <Sparkles className="w-3 h-3 text-[#D4AF37]" />
-          <span className="text-[11px] font-mono tracking-wider text-neutral-200">
+          <span className="text-[11px] tracking-wide text-neutral-200 font-medium">
             Express-Termin per WhatsApp
           </span>
           <button

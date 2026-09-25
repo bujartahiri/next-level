@@ -13,8 +13,8 @@
   --color-dark-800: #171717;
   --color-dark-700: #222222;
   --color-dark-600: #333333;
-  --font-syne: var(--font-syne), sans-serif;
-  --font-sans: var(--font-jakarta), sans-serif;
+  --font-syne: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
 }
 
 :root {

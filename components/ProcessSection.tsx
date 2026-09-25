@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import { motion } from "framer-motion";
@@ -7,84 +7,84 @@ import { Gauge, Sparkles, Shield, Flame, CheckCircle2 } from "lucide-react";
 const STEPS = [
   {
     step: "01",
-    title: "Diagnose & Lackmessung",
-    desc: "Präzise Ultraschall-Schichtdickenmessung unter 5000K-Tageslichtstrahlern zur Ermittlung der maximalen Poliertiefe.",
+    title: "Diagnose & Messung",
+    desc: "Schichtdickenmessung unter Tageslichtstrahlern zur präzisen Ermittlung der sicheren Poliertiefe.",
     icon: Gauge,
   },
   {
     step: "02",
     title: "Dekontamination",
-    desc: "Schonende 2-Eimer-Handwäsche und mechanische Knetbehandlung zur rückstandslosen Beseitigung von Flugrost und Harz.",
+    desc: "Schonende 2-Eimer-Handwäsche und Lackknete zur rückstandsfreien Beseitigung aller Ablagerungen.",
     icon: Sparkles,
   },
   {
     step: "03",
     title: "Mehrstufige Politur",
-    desc: "Korrektur aller Waschkratzer und Swirls ohne Füllstoffe für dauerhaften, ehrlichen Spiegelglanz auf Showroom-Niveau.",
+    desc: "Korrektur aller Waschkratzer ohne Füllstoffe für dauerhaften, ehrlichen Showroom-Spiegelglanz.",
     icon: Shield,
   },
   {
     step: "04",
-    title: "9H Keramik & Härtung",
-    desc: "Zertifizierter Auftrag von molekularem 9H-SiO2-Schutz mit Infrarot-Einbrennung für maximale Glashärte und Hydrophobie.",
+    title: "9H Versiegelung",
+    desc: "Molekularer 9H-SiO2-Auftrag mit Infrarot-Härtung für maximale Härte und extremen Abperleffekt.",
     icon: Flame,
   },
 ];
 
 export default function ProcessSection() {
   return (
-    <section id="process" className="relative py-28 sm:py-36 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/10">
+    <section id="process" className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/10">
       
       {/* Header */}
-      <div className="flex flex-col items-center text-center mb-16 sm:mb-20">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D4AF37]/40 bg-[#D4AF37]/10 mb-4">
-          <Sparkles className="w-4 h-4 text-[#D4AF37]" />
-          <span className="text-xs sm:text-sm font-mono tracking-[0.25em] text-[#D4AF37] uppercase font-bold">
+      <div className="flex flex-col items-center text-center mb-14 sm:mb-18">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#D4AF37]/35 bg-[#0a0a0a]/90 backdrop-blur-md mb-4">
+          <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
+          <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#D4AF37] font-semibold">
             Zertifizierter Ablauf
           </span>
         </div>
-        <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight font-syne text-white mb-4">
-          Die Kunst der <span className="text-gold-gradient">Perfektion</span>
+        <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-3">
+          Präzision in <span className="text-gold-gradient">vier Phasen</span>
         </h2>
-        <p className="max-w-2xl text-neutral-300 text-sm sm:text-base md:text-lg leading-relaxed">
-          Vier strukturierte Phasen für meisterhafte Lackkorrektur und dauerhaften Werterhalt.
+        <p className="max-w-xl text-neutral-300 text-sm sm:text-base leading-relaxed">
+          Systematisches Vorgehen für maximale Lackschonung und dauerhaften Werterhalt.
         </p>
       </div>
 
       {/* Grid of Steps */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
         {STEPS.map((s, idx) => {
           const Icon = s.icon;
           return (
             <motion.div
               key={s.step}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="p-7 sm:p-8 rounded-3xl bg-neutral-950/90 border border-white/15 hover:border-[#D4AF37]/60 transition-all duration-300 flex flex-col justify-between group shadow-xl hover:-translate-y-1"
+              transition={{ duration: 0.45, delay: idx * 0.08 }}
+              className="p-6 sm:p-7 rounded-2xl bg-[#0a0a0a] border border-white/10 hover:border-[#D4AF37]/50 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:-translate-y-1"
             >
               <div>
-                <div className="flex items-center justify-between mb-6">
-                  <span className="text-4xl sm:text-5xl font-black font-syne text-[#D4AF37]/35 group-hover:text-[#D4AF37] transition-colors">
+                <div className="flex items-center justify-between mb-5">
+                  <span className="text-3xl sm:text-4xl font-bold text-[#D4AF37]/40 group-hover:text-[#D4AF37] transition-colors">
                     {s.step}
                   </span>
-                  <div className="p-3 rounded-xl bg-neutral-900 border border-white/10 text-[#D4AF37]">
-                    <Icon className="w-5 h-5" />
+                  <div className="p-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-[#D4AF37]">
+                    <Icon className="w-4 h-4" />
                   </div>
                 </div>
 
-                <h3 className="text-lg sm:text-xl font-bold font-syne text-white tracking-wide mb-3">
+                <h3 className="text-base sm:text-lg font-bold text-white tracking-tight mb-2">
                   {s.title}
                 </h3>
 
-                <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
+                <p className="text-sm text-neutral-300 leading-relaxed">
                   {s.desc}
                 </p>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-white/10 flex items-center gap-2 text-xs font-mono text-[#D4AF37] font-semibold">
-                <CheckCircle2 className="w-4 h-4" />
+              <div className="mt-6 pt-3.5 border-t border-white/10 flex items-center gap-2 text-xs text-[#D4AF37] font-medium tracking-wide">
+                <CheckCircle2 className="w-3.5 h-3.5" />
                 <span>Meisterstandard</span>
               </div>
             </motion.div>

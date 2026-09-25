@@ -1,16 +1,15 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
-  Sparkles,
   MessageCircle,
   ArrowRight,
   ShieldCheck,
   Star,
-  CheckCircle2,
-  Phone,
+  Sparkles,
+  Award,
 } from "lucide-react";
 
 interface HeroSectionProps {
@@ -20,166 +19,170 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onOpenBooking, onReplayIntro }: HeroSectionProps) {
   return (
-    <section className="relative min-h-[95vh] flex flex-col justify-between pt-36 sm:pt-44 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+    <section className="relative min-h-[96svh] flex flex-col justify-between pt-32 sm:pt-40 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
       
-      {/* 1. Dramatic Dark Studio Backdrop with Gold Horizon Lighting */}
+      {/* 1. Dramatic Dark Detailing Studio Lighting Environment */}
       <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
-        {/* Cinematic Supercar Silhouette Background */}
-        <div className="absolute inset-0 opacity-20 sm:opacity-25 mix-blend-screen">
+        {/* Dark Studio Vehicle Backdrop with Soft Light Curves */}
+        <div className="absolute inset-0 opacity-25 mix-blend-screen">
           <Image
-            src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=2000&q=85"
-            alt="Supercar in Dark Detailing Studio"
+            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2200&q=85"
+            alt="NEXT LEVEL Detailing Studio Masterpiece"
             fill
             priority
-            className="object-cover object-center filter grayscale-[20%] contrast-[1.2]"
+            sizes="100vw"
+            className="object-cover object-center filter grayscale-[15%] contrast-[1.25]"
           />
         </div>
 
-        {/* Deep Vignette Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#050505]/75 to-[#050505]" />
+        {/* Studio Softbox Lighting Vignette */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#050505]/80 to-[#050505]" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-[#050505]" />
         
-        {/* Soft Golden Ambient Glow */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.12)_0%,transparent_70%)] filter blur-3xl" />
+        {/* Soft Champagne Overhead Inspection Light Cone */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.12)_0%,transparent_75%)] filter blur-2xl" />
       </div>
 
-      {/* 2. Main Hero Stage */}
-      <div className="relative z-10 flex flex-col items-center text-center max-w-5xl mx-auto">
+      {/* 2. Main Editorial Hero Composition */}
+      <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto my-auto">
         
-        {/* Studio Badge */}
+        {/* Single Quiet Eyebrow Badge */}
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-[#D4AF37]/40 bg-[#0a0a0a]/90 backdrop-blur-xl mb-6 shadow-[0_0_25px_rgba(212,175,55,0.15)]"
+          className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[#D4AF37]/35 bg-[#0a0a0a]/90 backdrop-blur-md mb-6 shadow-[0_2px_15px_rgba(0,0,0,0.6)]"
         >
-          <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
-          <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.25em] text-[#D4AF37] font-bold">
-            MEISTERBETRIEB &bull; AUTO DETAILING
+          <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
+          <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#D4AF37] font-semibold">
+            Meisterbetrieb für Fahrzeugveredelung
           </span>
         </motion.div>
 
-        {/* Official Slogan */}
+        {/* Master Headline: Commanding, Restrained, High-Precision */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] font-bold tracking-tight text-white leading-[1.08] mb-5"
+        >
+          MEHR ALS <br className="sm:hidden" />
+          <span className="text-white">NUR SAUBER.</span>
+          <span className="block text-gold-gradient mt-1 sm:mt-2 text-3xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-semibold tracking-normal">
+            Die Perfektion des Automobils.
+          </span>
+        </motion.h1>
+
+        {/* Official Slogan with Hairline Accents */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-xs sm:text-base font-mono tracking-[0.3em] uppercase text-neutral-300 font-semibold mb-4 flex items-center justify-center gap-3 sm:gap-4"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-xs sm:text-sm tracking-[0.3em] uppercase text-neutral-300 font-semibold mb-6 flex items-center justify-center gap-3 sm:gap-5"
         >
-          <span className="w-8 sm:w-12 h-[1px] bg-gradient-to-r from-transparent to-[#D4AF37]" />
+          <span className="w-8 sm:w-14 h-[1px] bg-gradient-to-r from-transparent to-[#D4AF37]/60" />
           <span>SAUBER &bull; GEPFLEGT &bull; WERTBESTÄNDIG</span>
-          <span className="w-8 sm:w-12 h-[1px] bg-gradient-to-l from-transparent to-[#D4AF37]" />
+          <span className="w-8 sm:w-14 h-[1px] bg-gradient-to-l from-transparent to-[#D4AF37]/60" />
         </motion.div>
 
-        {/* Master Headline: Large, Confident, Prestigious */}
-        <motion.h1
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black font-syne tracking-tight text-white leading-[1.05] mb-6"
-        >
-          MEHR ALS <br />
-          <span className="text-gold-gradient">NUR SAUBER.</span>
-        </motion.h1>
-
-        {/* Subtitle: High legibility 16-18px font */}
+        {/* Concise Value Proposition (Under 20 Words) */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="text-base sm:text-lg md:text-xl text-neutral-200 leading-relaxed max-w-3xl font-normal mb-10"
+          className="text-sm sm:text-base md:text-lg text-neutral-300 font-normal leading-relaxed max-w-2xl mb-9"
         >
-          Exklusive Fahrzeugaufbereitung, mehrstufige Lackkorrektur und zertifizierte 
-          9H-Keramikversiegelung. Wir bewahren den originalen Auslieferungszustand 
-          und sichern den Werterhalt Ihres Automobils auf höchstem Niveau.
+          Bespoke High-End Fahrzeugaufbereitung, mehrstufige Lackkorrektur und 
+          zertifizierte 9H-Keramikversiegelung für Liebhaber- und Sportwagen.
         </motion.p>
 
-        {/* Generous High-Impact Buttons */}
+        {/* Refined Luxury CTAs (No Cheesy Glows) */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 w-full sm:w-auto mb-14"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-5 w-full sm:w-auto mb-10"
         >
           <button
             onClick={onOpenBooking}
-            className="w-full sm:w-auto px-9 py-4 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#D4AF37] hover:brightness-110 text-black font-bold text-sm sm:text-base font-mono uppercase tracking-wider flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_0_35px_rgba(212,175,55,0.4)] active:scale-95 group"
+            className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#D4AF37] hover:bg-[#E5C358] text-black font-semibold text-xs sm:text-sm tracking-[0.14em] uppercase flex items-center justify-center gap-2.5 transition-all duration-300 shadow-[0_4px_20px_rgba(212,175,55,0.25)] hover:shadow-[0_6px_30px_rgba(212,175,55,0.4)] active:scale-95 cursor-pointer"
           >
-            <MessageCircle className="w-5 h-5 fill-black" />
+            <MessageCircle className="w-4 h-4 fill-black" />
             <span>Termin vereinbaren</span>
           </button>
 
           <a
             href="#gallery"
-            className="w-full sm:w-auto px-8 py-4 rounded-xl bg-neutral-950/80 border border-white/20 hover:border-[#D4AF37] text-white hover:text-[#D4AF37] font-semibold text-sm sm:text-base font-mono uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all active:scale-95"
+            className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/[0.03] hover:bg-white/[0.08] border border-white/20 hover:border-[#D4AF37]/60 text-white/90 hover:text-white font-medium text-xs sm:text-sm tracking-[0.14em] uppercase flex items-center justify-center gap-2 backdrop-blur-md transition-all duration-300 active:scale-95"
           >
             <span>Vorher / Nachher ansehen</span>
             <ArrowRight className="w-4 h-4 text-[#D4AF37]" />
           </a>
         </motion.div>
 
-        {/* Large Brand Emblem Silhouette */}
+        {/* Subtle Signature Silhouette Anchor */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.9, delay: 0.5 }}
-          className="relative w-full max-w-xl aspect-[554/103] pointer-events-none mb-12 select-none"
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="relative w-full max-w-sm sm:max-w-md aspect-[554/103] pointer-events-none select-none opacity-85 my-2"
         >
           <Image
             src="/images/loader/car.png"
-            alt="NEXT LEVEL Silhouette"
+            alt="NEXT LEVEL Signature Silhouette"
             fill
             priority
-            className="object-contain filter drop-shadow-[0_4px_30px_rgba(212,175,55,0.35)]"
+            sizes="(max-width: 768px) 320px, 450px"
+            className="object-contain filter drop-shadow-[0_2px_15px_rgba(212,175,55,0.2)]"
           />
         </motion.div>
 
       </div>
 
-      {/* 3. Big, Legible Trust Indicators Bar */}
+      {/* 3. Minimalist Specification / Trust Strip */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="relative z-10 pt-8 border-t border-white/15 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto w-full text-center sm:text-left"
+        className="relative z-10 pt-6 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto w-full"
       >
-        <div className="flex items-center justify-center sm:justify-start gap-4 p-4 rounded-xl bg-neutral-950/60 border border-white/10">
-          <div className="p-3 rounded-xl bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37]">
-            <Star className="w-6 h-6 fill-[#D4AF37]" />
+        <div className="flex items-center justify-center sm:justify-start gap-3.5 py-2 px-3">
+          <div className="p-2 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/25 text-[#D4AF37] shrink-0">
+            <Star className="w-4 h-4 fill-[#D4AF37]" />
           </div>
           <div>
-            <div className="text-xl sm:text-2xl font-bold font-syne text-white">5.0 ★ Google</div>
-            <div className="text-xs sm:text-sm text-neutral-400 font-mono">Ausgezeichnete Bewertungen</div>
+            <div className="text-sm font-semibold text-white tracking-wide">5.0 ★ Google Rezensionen</div>
+            <div className="text-xs text-neutral-400">Ausgezeichnete Kundenzufriedenheit</div>
           </div>
         </div>
 
-        <div className="flex items-center justify-center sm:justify-start gap-4 p-4 rounded-xl bg-neutral-950/60 border border-white/10">
-          <div className="p-3 rounded-xl bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37]">
-            <ShieldCheck className="w-6 h-6" />
+        <div className="flex items-center justify-center sm:justify-start gap-3.5 py-2 px-3 sm:border-l sm:border-white/10">
+          <div className="p-2 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/25 text-[#D4AF37] shrink-0">
+            <ShieldCheck className="w-4 h-4" />
           </div>
           <div>
-            <div className="text-xl sm:text-2xl font-bold font-syne text-white">9H Keramikschutz</div>
-            <div className="text-xs sm:text-sm text-neutral-400 font-mono">Zertifizierte Versiegelung</div>
+            <div className="text-sm font-semibold text-white tracking-wide">9H Keramik-Zertifikat</div>
+            <div className="text-xs text-neutral-400">Bis zu 48 Monate Lackgarantie</div>
           </div>
         </div>
 
-        <div className="flex items-center justify-center sm:justify-start gap-4 p-4 rounded-xl bg-neutral-950/60 border border-white/10">
-          <div className="p-3 rounded-xl bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37]">
-            <CheckCircle2 className="w-6 h-6" />
+        <div className="flex items-center justify-center sm:justify-start gap-3.5 py-2 px-3 sm:border-l sm:border-white/10">
+          <div className="p-2 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/25 text-[#D4AF37] shrink-0">
+            <Award className="w-4 h-4" />
           </div>
           <div>
-            <div className="text-xl sm:text-2xl font-bold font-syne text-white">100% Handwäsche</div>
-            <div className="text-xs sm:text-sm text-neutral-400 font-mono">Schonende 2-Eimer-Methode</div>
+            <div className="text-sm font-semibold text-white tracking-wide">100% Handarbeit</div>
+            <div className="text-xs text-neutral-400">Schonende 2-Eimer-Methode</div>
           </div>
         </div>
       </motion.div>
 
       {/* Intro Replay Micro Link */}
       {onReplayIntro && (
-        <div className="text-center mt-8">
+        <div className="text-center mt-4">
           <button
             onClick={onReplayIntro}
-            className="text-xs font-mono tracking-widest uppercase text-neutral-400 hover:text-[#D4AF37] transition-colors underline decoration-dotted underline-offset-4"
+            className="text-[11px] tracking-[0.2em] uppercase text-neutral-400 hover:text-[#D4AF37] transition-colors underline decoration-dotted underline-offset-4 cursor-pointer"
           >
             Intro-Animation wiederholen
           </button>
