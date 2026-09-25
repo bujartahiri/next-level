@@ -1,15 +1,14 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
+import React, { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   MessageCircle,
   ArrowRight,
   ShieldCheck,
   Star,
-  Sparkles,
   Award,
+  RotateCcw,
 } from "lucide-react";
 
 interface HeroSectionProps {
@@ -18,177 +17,199 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ onOpenBooking, onReplayIntro }: HeroSectionProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+      videoRef.current.defaultMuted = true;
+      videoRef.current.play().catch(() => {});
+    }
+  }, []);
+
   return (
-    <section className="relative min-h-[96svh] flex flex-col justify-between pt-32 sm:pt-40 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+    <section className="relative min-h-[100svh] w-full flex flex-col justify-between overflow-hidden">
       
-      {/* 1. Dramatic Dark Detailing Studio Lighting Environment */}
-      <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
-        {/* Dark Studio Vehicle Backdrop with Soft Light Curves */}
-        <div className="absolute inset-0 opacity-25 mix-blend-screen">
-          <Image
-            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2200&q=85"
-            alt="NEXT LEVEL Detailing Studio Masterpiece"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center filter grayscale-[15%] contrast-[1.25]"
-          />
-        </div>
+      {/* 1. Cinematic Full-Bleed Video Background with Crystal-Clear Visibility */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        {/* Background Video */}
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+          onLoadedMetadata={(e) => {
+            e.currentTarget.muted = true;
+            e.currentTarget.play().catch(() => {});
+          }}
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-95 transition-opacity duration-700"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
 
-        {/* Studio Softbox Lighting Vignette */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#050505]/80 to-[#050505]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-[#050505]" />
+        {/* Minimal Vignette & Cinematic Gradients - Light enough to let video shine, dark enough for sharp legibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/15 to-[#050505] transition-opacity" />
         
-        {/* Soft Champagne Overhead Inspection Light Cone */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.12)_0%,transparent_75%)] filter blur-2xl" />
+        {/* Subtle top shading for navbar contrast */}
+        <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-black/70 to-transparent" />
+
+        {/* Soft Champagne Overhead Light Ambient Accent */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] sm:w-[900px] h-[300px] bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.08)_0%,transparent_70%)] filter blur-3xl pointer-events-none" />
+
+        {/* Seamless bottom blend into subsequent sections */}
+        <div className="absolute bottom-0 inset-x-0 h-24 sm:h-36 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-transparent" />
       </div>
 
-      {/* 2. Main Editorial Hero Composition */}
-      <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto my-auto">
+      {/* 2. Main Minimal Editorial Content Composition */}
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-36 pb-6 sm:pb-12 flex flex-col justify-between flex-1">
         
-        {/* Single Quiet Eyebrow Badge */}
+        {/* Center Editorial Focus */}
+        <div className="flex flex-col items-center text-center my-auto max-w-3xl mx-auto">
+          
+          {/* Refined Eyebrow Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full border border-[#D4AF37]/30 bg-black/40 backdrop-blur-md mb-4 sm:mb-6 shadow-[0_2px_12px_rgba(0,0,0,0.5)]"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] animate-pulse" />
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.22em] text-[#D4AF37] font-semibold">
+              Meisterbetrieb für Fahrzeugveredelung
+            </span>
+          </motion.div>
+
+          {/* Master Headline: Clean, Confident & Impactful */}
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-[4.75rem] font-extrabold tracking-tight text-white leading-[1.1] mb-3 sm:mb-5 drop-shadow-[0_2px_20px_rgba(0,0,0,0.85)]"
+          >
+            MEHR ALS NUR SAUBER.
+            <span className="block text-gold-gradient font-bold mt-1 sm:mt-2 text-2xl sm:text-4xl md:text-5xl lg:text-[4rem] tracking-tight">
+              Die Perfektion des Automobils.
+            </span>
+          </motion.h1>
+
+          {/* Minimal Value Proposition: Short & Punchy */}
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xs sm:text-base md:text-lg text-neutral-200/90 font-light leading-relaxed max-w-xl mb-6 sm:mb-8 drop-shadow-[0_1px_10px_rgba(0,0,0,0.9)]"
+          >
+            <span className="hidden sm:inline">
+              Bespoke High-End Fahrzeugaufbereitung, mehrstufige Lackkorrektur und zertifizierte 9H-Keramikversiegelung.
+            </span>
+            <span className="sm:hidden">
+              High-End Fahrzeugaufbereitung & zertifizierte 9H-Keramikversiegelung für höchste Ansprüche.
+            </span>
+          </motion.p>
+
+          {/* Streamlined CTAs: Side-by-Side on Mobile, Compact & Modern */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-row items-center justify-center gap-2.5 sm:gap-4 w-full max-w-xs sm:max-w-none"
+          >
+            <button
+              onClick={onOpenBooking}
+              className="flex-1 sm:flex-initial px-5 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#D4AF37] hover:bg-[#E5C358] text-black font-semibold text-xs sm:text-sm tracking-[0.12em] uppercase flex items-center justify-center gap-2 transition-all duration-300 shadow-[0_4px_25px_rgba(212,175,55,0.3)] hover:shadow-[0_6px_35px_rgba(212,175,55,0.45)] active:scale-95 cursor-pointer whitespace-nowrap"
+            >
+              <MessageCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-black shrink-0" />
+              <span>Termin anfragen</span>
+            </button>
+
+            <a
+              href="#gallery"
+              className="flex-1 sm:flex-initial px-4 sm:px-7 py-3.5 sm:py-4 rounded-full bg-black/40 hover:bg-white/10 border border-white/20 hover:border-[#D4AF37]/60 text-white font-medium text-xs sm:text-sm tracking-[0.12em] uppercase flex items-center justify-center gap-1.5 backdrop-blur-md transition-all duration-300 active:scale-95 whitespace-nowrap"
+            >
+              <span className="sm:hidden">Ergebnisse</span>
+              <span className="hidden sm:inline">Vorher / Nachher</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#D4AF37] shrink-0" />
+            </a>
+          </motion.div>
+
+        </div>
+
+        {/* 3. Bottom Minimalist Proof Elements */}
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[#D4AF37]/35 bg-[#0a0a0a]/90 backdrop-blur-md mb-6 shadow-[0_2px_15px_rgba(0,0,0,0.6)]"
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
-          <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#D4AF37] font-semibold">
-            Meisterbetrieb für Fahrzeugveredelung
-          </span>
-        </motion.div>
-
-        {/* Master Headline: Commanding, Restrained, High-Precision */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] font-bold tracking-tight text-white leading-[1.08] mb-5"
-        >
-          MEHR ALS <br className="sm:hidden" />
-          <span className="text-white">NUR SAUBER.</span>
-          <span className="block text-gold-gradient mt-1 sm:mt-2 text-3xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-semibold tracking-normal">
-            Die Perfektion des Automobils.
-          </span>
-        </motion.h1>
-
-        {/* Official Slogan with Hairline Accents */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-xs sm:text-sm tracking-[0.3em] uppercase text-neutral-300 font-semibold mb-6 flex items-center justify-center gap-3 sm:gap-5"
-        >
-          <span className="w-8 sm:w-14 h-[1px] bg-gradient-to-r from-transparent to-[#D4AF37]/60" />
-          <span>SAUBER &bull; GEPFLEGT &bull; WERTBESTÄNDIG</span>
-          <span className="w-8 sm:w-14 h-[1px] bg-gradient-to-l from-transparent to-[#D4AF37]/60" />
-        </motion.div>
-
-        {/* Concise Value Proposition (Under 20 Words) */}
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="text-sm sm:text-base md:text-lg text-neutral-300 font-normal leading-relaxed max-w-2xl mb-9"
-        >
-          Bespoke High-End Fahrzeugaufbereitung, mehrstufige Lackkorrektur und 
-          zertifizierte 9H-Keramikversiegelung für Liebhaber- und Sportwagen.
-        </motion.p>
-
-        {/* Refined Luxury CTAs (No Cheesy Glows) */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-5 w-full sm:w-auto mb-10"
+          className="relative z-10 pt-4"
         >
-          <button
-            onClick={onOpenBooking}
-            className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#D4AF37] hover:bg-[#E5C358] text-black font-semibold text-xs sm:text-sm tracking-[0.14em] uppercase flex items-center justify-center gap-2.5 transition-all duration-300 shadow-[0_4px_20px_rgba(212,175,55,0.25)] hover:shadow-[0_6px_30px_rgba(212,175,55,0.4)] active:scale-95 cursor-pointer"
-          >
-            <MessageCircle className="w-4 h-4 fill-black" />
-            <span>Termin vereinbaren</span>
-          </button>
+          {/* Mobile: Ultra-sleek compact glass pill */}
+          <div className="flex sm:hidden items-center justify-center gap-3 py-2 px-4 rounded-full bg-black/50 border border-white/10 backdrop-blur-md mx-auto w-fit shadow-[0_2px_15px_rgba(0,0,0,0.6)]">
+            <div className="flex items-center gap-1.5 text-[11px] font-medium text-white/90">
+              <Star className="w-3 h-3 text-[#D4AF37] fill-[#D4AF37]" />
+              <span>5.0 Google</span>
+            </div>
+            <span className="w-1 h-1 rounded-full bg-white/30" />
+            <div className="flex items-center gap-1.5 text-[11px] font-medium text-white/90">
+              <ShieldCheck className="w-3 h-3 text-[#D4AF37]" />
+              <span>9H Keramik</span>
+            </div>
+            <span className="w-1 h-1 rounded-full bg-white/30" />
+            <div className="flex items-center gap-1.5 text-[11px] font-medium text-white/90">
+              <Award className="w-3 h-3 text-[#D4AF37]" />
+              <span>Handarbeit</span>
+            </div>
+          </div>
 
-          <a
-            href="#gallery"
-            className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/[0.03] hover:bg-white/[0.08] border border-white/20 hover:border-[#D4AF37]/60 text-white/90 hover:text-white font-medium text-xs sm:text-sm tracking-[0.14em] uppercase flex items-center justify-center gap-2 backdrop-blur-md transition-all duration-300 active:scale-95"
-          >
-            <span>Vorher / Nachher ansehen</span>
-            <ArrowRight className="w-4 h-4 text-[#D4AF37]" />
-          </a>
-        </motion.div>
+          {/* Desktop & Tablet: Sophisticated 3-Pillar Minimal Strip */}
+          <div className="hidden sm:grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto w-full pt-4 border-t border-white/10">
+            <div className="flex items-center justify-center gap-3 py-1">
+              <div className="p-1.5 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/25 text-[#D4AF37] shrink-0">
+                <Star className="w-4 h-4 fill-[#D4AF37]" />
+              </div>
+              <div className="text-left">
+                <div className="text-xs font-semibold text-white tracking-wide">5.0 ★ Google Rezensionen</div>
+                <div className="text-[11px] text-neutral-400">Ausgezeichnete Zufriedenheit</div>
+              </div>
+            </div>
 
-        {/* Subtle Signature Silhouette Anchor */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="relative w-full max-w-sm sm:max-w-md aspect-[554/103] pointer-events-none select-none opacity-85 my-2"
-        >
-          <Image
-            src="/images/loader/car.png"
-            alt="NEXT LEVEL Signature Silhouette"
-            fill
-            priority
-            sizes="(max-width: 768px) 320px, 450px"
-            className="object-contain filter drop-shadow-[0_2px_15px_rgba(212,175,55,0.2)]"
-          />
+            <div className="flex items-center justify-center gap-3 py-1 border-l border-white/10">
+              <div className="p-1.5 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/25 text-[#D4AF37] shrink-0">
+                <ShieldCheck className="w-4 h-4" />
+              </div>
+              <div className="text-left">
+                <div className="text-xs font-semibold text-white tracking-wide">9H Keramik-Zertifikat</div>
+                <div className="text-[11px] text-neutral-400">Bis zu 48 Monate Garantie</div>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center gap-3 py-1 border-l border-white/10">
+              <div className="p-1.5 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/25 text-[#D4AF37] shrink-0">
+                <Award className="w-4 h-4" />
+              </div>
+              <div className="text-left">
+                <div className="text-xs font-semibold text-white tracking-wide">100% Handarbeit</div>
+                <div className="text-[11px] text-neutral-400">Schonende 2-Eimer-Methode</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Intro Replay Micro Link */}
+          {onReplayIntro && (
+            <div className="text-center mt-3">
+              <button
+                onClick={onReplayIntro}
+                className="inline-flex items-center gap-1.5 text-[10px] tracking-[0.2em] uppercase text-neutral-400 hover:text-[#D4AF37] transition-colors cursor-pointer"
+              >
+                <RotateCcw className="w-2.5 h-2.5" />
+                <span>Intro wiederholen</span>
+              </button>
+            </div>
+          )}
         </motion.div>
 
       </div>
-
-      {/* 3. Minimalist Specification / Trust Strip */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-        className="relative z-10 pt-6 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto w-full"
-      >
-        <div className="flex items-center justify-center sm:justify-start gap-3.5 py-2 px-3">
-          <div className="p-2 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/25 text-[#D4AF37] shrink-0">
-            <Star className="w-4 h-4 fill-[#D4AF37]" />
-          </div>
-          <div>
-            <div className="text-sm font-semibold text-white tracking-wide">5.0 ★ Google Rezensionen</div>
-            <div className="text-xs text-neutral-400">Ausgezeichnete Kundenzufriedenheit</div>
-          </div>
-        </div>
-
-        <div className="flex items-center justify-center sm:justify-start gap-3.5 py-2 px-3 sm:border-l sm:border-white/10">
-          <div className="p-2 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/25 text-[#D4AF37] shrink-0">
-            <ShieldCheck className="w-4 h-4" />
-          </div>
-          <div>
-            <div className="text-sm font-semibold text-white tracking-wide">9H Keramik-Zertifikat</div>
-            <div className="text-xs text-neutral-400">Bis zu 48 Monate Lackgarantie</div>
-          </div>
-        </div>
-
-        <div className="flex items-center justify-center sm:justify-start gap-3.5 py-2 px-3 sm:border-l sm:border-white/10">
-          <div className="p-2 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/25 text-[#D4AF37] shrink-0">
-            <Award className="w-4 h-4" />
-          </div>
-          <div>
-            <div className="text-sm font-semibold text-white tracking-wide">100% Handarbeit</div>
-            <div className="text-xs text-neutral-400">Schonende 2-Eimer-Methode</div>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Intro Replay Micro Link */}
-      {onReplayIntro && (
-        <div className="text-center mt-4">
-          <button
-            onClick={onReplayIntro}
-            className="text-[11px] tracking-[0.2em] uppercase text-neutral-400 hover:text-[#D4AF37] transition-colors underline decoration-dotted underline-offset-4 cursor-pointer"
-          >
-            Intro-Animation wiederholen
-          </button>
-        </div>
-      )}
-
     </section>
   );
 }
